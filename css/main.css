@@ -1,0 +1,11 @@
+html, body, td, h1, h2, h3, h4, h5, h6 {
+    background-color: #0f0f0f;
+    font-family: 'verdana', sans-serif;
+    color: rgb(224, 220, 220);
+    margin: 0;
+    padding: 0;
+}
+.dark-mode {
+    background-color: white;
+    color: black;        
+}

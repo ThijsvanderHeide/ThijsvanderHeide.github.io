@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Calculator</h1>
+        <div class="row">
+          <input class="calculate-times-input" type="number" />
+          <span>x</span>
+          <input class="calculate-times-input" type="number" />
+          <span>=</span>
+          <span id="times" class="calculate-times-output">0</span>
+        </div>
+        <div class="row">
+          <input class="calculate-divide-input" type="number" />
+          <span>/</span>
+          <input class="calculate-divide-input" type="number" />
+          <span>=</span>
+          <span id="divide" class="calculate-divide-output">0</span>
+        </div>
+        <div class="row">
+          <input class="calculate-add-input" type="number" />
+          <span>+</span>
+          <input class="calculate-add-input" type="number" />
+          <span>=</span>
+          <span id="add" class="calculate-add-output">0</span>
+        </div>
+        <div class="row">
+          <input class="calculate-substract-input" type="number" />
+          <span>-</span>
+          <input class="calculate-substract-input" type="number" />
+          <span>=</span>
+          <span id="minus" class="calculate-substract-output">0</span>
+        </div>
+        <div class="row">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span>Everything added up</span>
+          <span>=</span>
+          <span id="finalTotal" class="calculate-total-output">0</span>
+        </div>
+        <div class="row">
+          <button class="calculate">Calculate</button>
+        </div>
+      </section> 
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
