@@ -33,7 +33,7 @@ console.log(localStorage.getItem("storedTheme"))
 
 if(themeLight){
     const elements = document.querySelectorAll(
-        "h1, h2, h3, h4, h5, li, body, .normal-text" )
+        "html, h1, h2, h3, h4, h5, li, body, .normal-text" )
     for(let i = 0; i < elements.length; i++ ) {
     const element = elements[i];
     element.classList.toggle("dark-mode");
