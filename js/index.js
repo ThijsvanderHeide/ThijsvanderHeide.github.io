@@ -26,10 +26,7 @@ const toggleTheme = function () {
         else{
         lightModeOn = false
         }
-        console.log(lightModeOn);
-};  
-
-console.log(localStorage.getItem("storedTheme"))
+};
 
 if(themeLight){
     const elements = document.querySelectorAll(
@@ -44,14 +41,12 @@ if(themeLight){
         else{
         lightModeOn = false
         }
-        console.log(lightModeOn);
 };
 
 button.addEventListener('click', toggleTheme);
 
  const timedTheme = function () {
      const date = new Date();
-     console.log(date);
      if(date.getSeconds() < 17 && date.getSeconds() > 7  ){
          if(lightModeOn == false && autoMode == false){
          toggleTheme();
