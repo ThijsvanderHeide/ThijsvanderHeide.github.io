@@ -4,7 +4,7 @@ const numbersPlus = document.querySelectorAll(".calculate-add-input")
 const numbersMinus = document.querySelectorAll(".calculate-substract-input")
 const calculateButton = document.querySelector(".calculate")
 
-
+// Berekent de sommen nadat er op uitrekenen word geklikt
 const calculateAll = function () {
     let totalTimes = 0;
     let totalDivide = 0;
@@ -62,6 +62,7 @@ const calculateAll = function () {
 
         }
     }
+    // Eindsom met alles bij elkaar opgeteld
     totalEverything = totalTimes + totalDivide + totalPlus + totalMinus;
     console.log(totalEverything)
     document.getElementById("finalTotal").textContent = totalEverything;

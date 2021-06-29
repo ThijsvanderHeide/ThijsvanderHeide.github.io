@@ -1,41 +1,26 @@
 import Player from "./Player.js";
 
-/**
- * To start:
- * Check index.html, make sure the board with fields are created with correct classnames
- * The board should be 3x3 fields
- * Add correct classes
- */
-
 const players = [ ];
-let currentPlayer = 0; // This is the index of the array of the currentplayer
+let currentPlayer = 0;
 const fields = document.querySelectorAll('.grid-item');
 const resetButton = document.querySelector(".reset-btn");
-//Create two players aligned with the Player class
 const playerOne = new Player("Player 1", "X")
 const playerTwo = new Player("Player 2", "O")
-//Add both players to the players array
+
 players.push(playerOne)
 players.push(playerTwo)
 
-/**
- * Assignment
- * Make a loop thru all the fields and add a click event. 
- * Connect the addSymbolToField function in the eventHandler
- */
+
 for (let i = 0; i < fields.length; i++) {
     const field = fields[i];
     field.addEventListener("click", function() {
         addSymbolToField(field);
     });
 }
-/**
- * Assignment 
- * Give body to the reset function (the function exists below)
- */
+
 resetButton.addEventListener("click", resetGame);
 
-
+// Symbool word toegevoegd
 function addSymbolToField(field) {
     const fieldContent = field.textContent;
     if (fieldContent === 'X' || fieldContent === 'O') {
@@ -55,6 +40,7 @@ function addSymbolToField(field) {
 
 }
 
+// Alle winlijnen checken
 function checkWinner() {
     const winline1 = [fields[0].textContent, fields[1].textContent, fields[2].textContent];
     const winline2 = [fields[3].textContent, fields[4].textContent, fields[5].textContent];

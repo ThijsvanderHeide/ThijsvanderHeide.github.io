@@ -6,6 +6,8 @@ const themeLightBag = localStorage.getItem("storedTheme");
 
 let lightModeOn = false;
 let autoMode = false;
+
+// Toggles het Thema van Darkmode naar Lightmode en terug
 const toggleTheme = function () {
     if(themeLight){
         themeLight = false;
@@ -28,6 +30,7 @@ const toggleTheme = function () {
         }
 };
 
+// Startup check of darkmode al aan staat
 if(themeLight){
     const elements = document.querySelectorAll(
         "html, h1, h2, h3, h4, h5, li, body, .normal-text" )
@@ -45,6 +48,8 @@ if(themeLight){
 
 button.addEventListener('click', toggleTheme);
 
+
+// Timer voor de Darkmode/Lightmode switch
  const timedTheme = function () {
      const date = new Date();
      if(date.getSeconds() < 17 && date.getSeconds() > 7  ){
