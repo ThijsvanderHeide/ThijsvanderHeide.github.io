@@ -1,8 +1,11 @@
+// Query Selectors
 const clickHere = document.querySelector(".click-button");
 const upgradeHere = document.querySelector(".upgrade-button");
 const upgradeHereAuto = document.querySelector(".auto-button");
 const fungrade = document.querySelector(".fun-button");
 const numberCount = document.querySelector(".counter");
+const flickHere = document.querySelector(".flick-button")
+const flickCount = document.querySelector(".flick-counter")
 
 let buttonBox = [clickHere, upgradeHere, upgradeHereAuto, fungrade];
 
@@ -15,11 +18,15 @@ let autoCost = 100;
 let funRequired = 1000;
 let autoUpgrade = false;
 
+let flicks = 0;
+
 clickHere.addEventListener("click", clickAdd);
 upgradeHere.addEventListener("click", clickUpgrade);
 upgradeHereAuto.addEventListener("click", clickUpgradeAuto);
 fungrade.addEventListener("click", funStart);
+flickHere.addEventListener("click", flickAdd)
 
+// Functions
 function clickAdd() {
     clicks = clicks + newClicks;
     numberCount.textContent = clicks;
@@ -31,7 +38,7 @@ function clickUpgrade() {
         newClicks = newClicks + upgradeMultiplier;
         numberCount.textContent = clicks;
         upgradeMultiplier++;
-        upgradeCost = upgradeCost + 10;
+        upgradeCost = upgradeCost * 2;
         upgradeHere.innerHTML = "Here for an upgrade (Cost: " + upgradeCost + " Clicks)";
     }
     else{
@@ -82,6 +89,16 @@ function funModeOn() {
         let b = Math.floor(Math.random() * 256);
         let bgColor="rgb("+ r +","+ g +","+ b +")";
         forButton.style.background = bgColor;
+    }
+}
+
+function flickAdd() {
+    if (clicks >= 5000) {
+        flicks = flicks + 1
+        flickCount.textContent = flicks;
+    }
+    else {
+        alert("Je hebt niet genoeg clicks")
     }
 }
 
