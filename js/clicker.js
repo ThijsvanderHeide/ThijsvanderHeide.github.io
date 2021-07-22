@@ -1,10 +1,10 @@
-// Query Selectors
 const clickHere = document.querySelector(".click-button");
 const upgradeHere = document.querySelector(".upgrade-button");
 const upgradeHereAuto = document.querySelector(".auto-button");
 const fungrade = document.querySelector(".fun-button");
 const numberCount = document.querySelector(".counter");
 const flickHere = document.querySelector(".flick-button")
+const flickAuto = document.querySelector(".flick-auto-button")
 const flickCount = document.querySelector(".flick-counter")
 
 let buttonBox = [clickHere, upgradeHere, upgradeHereAuto, fungrade];
@@ -17,6 +17,7 @@ let upgradeCost = 10;
 let autoCost = 100;
 let funRequired = 1000;
 let autoUpgrade = false;
+let autoFlickUpgrade = false;
 
 let flicks = 0;
 
@@ -25,8 +26,8 @@ upgradeHere.addEventListener("click", clickUpgrade);
 upgradeHereAuto.addEventListener("click", clickUpgradeAuto);
 fungrade.addEventListener("click", funStart);
 flickHere.addEventListener("click", flickAdd)
+flickAuto.addEventListener("click", flickAutoAdd)
 
-// Functions
 function clickAdd() {
     clicks = clicks + newClicks;
     numberCount.textContent = clicks;
@@ -69,6 +70,8 @@ function autoClicks() {
 
 function funStart() {
     if (clicks >= 10000) {
+        clicks = clicks - 10000;
+        numberCount.textContent = clicks;
         setInterval(funModeOn, 500);
     }
     else{
@@ -94,6 +97,8 @@ function funModeOn() {
 
 function flickAdd() {
     if (clicks >= 5000) {
+        clicks = clicks - 5000;
+        numberCount.textContent = clicks;
         flicks = flicks + 1
         flickCount.textContent = flicks;
     }
@@ -102,4 +107,23 @@ function flickAdd() {
     }
 }
 
+function flickAutoAdd() {
+    if (flicks >= 0) {
+        flicks = flicks - 10;
+        autoFlickUpgrade = true;
+        flickCount.textContent = flicks;
+    }
+    else{
+        alert("Je hebt niet genoeg flicks");
+    }
+}
+
+function autoFlicks() {
+    if (autoFlickUpgrade == true) {
+        flicks = flicks + 1;
+        flickCount.textContent = flicks;
+    }
+}
+
 setInterval(autoClicks, 1000);
+setInterval(autoFlicks, 1000);
