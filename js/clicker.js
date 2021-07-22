@@ -108,7 +108,7 @@ function flickAdd() {
 }
 
 function flickAutoAdd() {
-    if (flicks >= 0) {
+    if (flicks >= 10) {
         flicks = flicks - 10;
         autoFlickUpgrade = true;
         flickCount.textContent = flicks;
