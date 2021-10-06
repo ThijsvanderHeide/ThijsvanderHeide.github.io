@@ -10,24 +10,34 @@
   <title>Clicker</title>
 </head>
 
-<body>
-    
-    <header>
-      <a class="nav-link" href="page2.html">Terug naar de Portfolio</a>
+<body>  
+  <a class="nav-link" href="page2.html">Terug naar de Portfolio</a>
+  <h1 class="titel">Welkom bij de Clicker Game</h1>
+  <div class="container-fluid">
+    <header class="row">
+      <div class="col-sm-6">
       <div>
-        <h1>Welkom bij de Clicker Game</h1>
+        <h2>Clicks:</h2>
         <button class="click-button">Click Here</button>
         <button class="upgrade-button">Here for an upgrade (Cost: 10 Clicks)</button>
         <button class="auto-button">Here for automated clicks (Cost: 100 Clicks)</button>
         <button class="fun-button">Here for fun mode (Cost: 10000 Clicks)</button>
         <h2 class="counter">0</h2>
       </div>
+    </div>
+    <div class="col-sm-6">
       <div>
         <h2>Flicks:</h2>
         <button class="flick-button">Get flicking! (Cost: 5000 Clicks)</button>
         <button class="flick-auto-button">Automatic Flicks (Cost: 10 Flicks)</button>
+        <button class="flick-charge-button">Mega Charge Clicks (Cost: 100 Flicks)</button>
         <h2 class="flick-counter">0</h2>
       </div>
+    </div>
+    <div class="col-sm-6">
+      <h3 class="scroll-count">Scrolls: 0</h3>
+      <button class="reset-button">Gain a Scroll</button>
+    </div>
   </header>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
